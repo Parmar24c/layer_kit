@@ -4,7 +4,8 @@
 
 LayerKit is a powerful Flutter framework that combines the best aspects of MVVM (Model-View-ViewModel) pattern with Clean Architecture principles to create a robust, maintainable, and scalable application structure.
 
-[![Pub Version](https://img.shields.io/badge/pub-v0.0.2-blue)](https://pub.dev/packages/layer_kit)
+
+[![pub package](https://img.shields.io/pub/v/layer_kit.svg)](https://pub.dev/packages/layer_kit)
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 
 ## 🌟 Features
