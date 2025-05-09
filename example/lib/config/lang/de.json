@@ -1,0 +1,13 @@
+{
+  "home": "Zuhause",
+  "demo": "Demo",
+  "profile": "Profil",
+  "screen": "Bildschirm",
+  "loginScreen": "Anmelde Bildschirm",
+  "homeScreen": "Start Bildschirm",
+  "demoScreen": "Demo-Bildschirm",
+  "nextScreen": "Nächster Bildschirm",
+  "demo2": "Demo 2",
+  "profileScreen": "Profil Bildschirm",
+  "loginWithoutEmailPassword": "Anmeldung ohne E-Mail & Passwort"
+}

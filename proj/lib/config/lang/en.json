@@ -1,0 +1,13 @@
+{
+  "home": "Home",
+  "demo": "Demo",
+  "profile": "Profile",
+  "screen" : "Screen",
+  "loginScreen": "Login Screen",
+  "homeScreen": "Home Screen",
+  "demoScreen" : "Demo Screen",
+  "nextScreen" : "Next Screen",
+  "demo2": "Demo 2",
+  "profileScreen" : "Profile Screen",
+  "loginWithoutEmailPassword": "Login Without Email & Password"
+}

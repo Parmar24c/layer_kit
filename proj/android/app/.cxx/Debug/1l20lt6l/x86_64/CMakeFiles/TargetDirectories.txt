@@ -1,0 +1,2 @@
+C:/_PARMAR/NEON_PROJECTS/Layer Kit/example/android/app/.cxx/Debug/1l20lt6l/x86_64/CMakeFiles/edit_cache.dir
+C:/_PARMAR/NEON_PROJECTS/Layer Kit/example/android/app/.cxx/Debug/1l20lt6l/x86_64/CMakeFiles/rebuild_cache.dir
