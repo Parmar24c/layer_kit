@@ -16,9 +16,12 @@ class Di {
 
     sl
           ..registerLazySingleton<Dio>(() => Dio())
-          ..registerLazySingleton<LoggingInterceptor>(() => LoggingInterceptor())
-          ..registerLazySingleton<DioClient>(() => DioClient(Apis.url, dio: sl(), loggingInterceptor: sl()))
-          ..registerLazySingleton<NetworkService>(() => NetworkService()..startConnectionStreaming())
+          ..registerLazySingleton<LoggingInterceptor>(
+              () => LoggingInterceptor())
+          ..registerLazySingleton<DioClient>(
+              () => DioClient(Apis.url, dio: sl(), loggingInterceptor: sl()))
+          ..registerLazySingleton<NetworkService>(
+              () => NetworkService()..startConnectionStreaming())
         // ..registerLazySingleton<FirebaseClient>(() => FirebaseClient())
         // ..registerLazySingleton<HiveClient>(() => HiveClient()..initHive());
         //
@@ -37,9 +40,12 @@ class Di {
     sl
           ..registerFactory<ThemeProvider>(() => ThemeProvider())
           ..registerFactory<SplashProvider>(() => SplashProvider(sp: sl()))
-          ..registerFactory<AuthProvider>(() => AuthProvider(authRepo: sl(), networkService: sl()))
-          ..registerFactory<HomeProvider>(() => HomeProvider(networkService: sl()))
-          ..registerFactory<DemoProvider>(() => DemoProvider(authRepo: sl(), networkService: sl()))
+          ..registerFactory<AuthProvider>(
+              () => AuthProvider(authRepo: sl(), networkService: sl()))
+          ..registerFactory<HomeProvider>(
+              () => HomeProvider(networkService: sl()))
+          ..registerFactory<DemoProvider>(
+              () => DemoProvider(authRepo: sl(), networkService: sl()))
         //
         ;
 
@@ -49,7 +55,9 @@ class Di {
   }
 
   static List<SingleChildWidget> get changeNotifierProviders => [
-        StreamProvider(create: (_) => sl<NetworkService>().controller.stream, initialData: NetworkStatus.offline),
+        StreamProvider(
+            create: (_) => sl<NetworkService>().controller.stream,
+            initialData: NetworkStatus.offline),
         ChangeNotifierProvider(create: (_) => sl<ThemeProvider>()),
         ChangeNotifierProvider(create: (_) => sl<AuthProvider>()),
         ChangeNotifierProvider(create: (_) => sl<SplashProvider>()),

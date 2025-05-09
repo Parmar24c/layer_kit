@@ -36,39 +36,40 @@ class MovieScreen extends StatelessWidget with BaseRoute {
           title: Txt.appbar("Movie Screen", color: context.colors.primary),
         ),
         body: SafeArea(
-          child: Consumer<MovieProvider>(
-            builder: (context, state, _) {
-              if(state.state == ViewState.loading /* or use [state.isLoading] */) {
-                return Center(child: CircularProgressIndicator());
-              }
-
-              if(state.state == ViewState.error){
-                return Center(child: Txt.title18(state.errorMessage, color: Colors.red));
-              }
-
-              return Center(
-                child: CustomElevatedButton(
-                  child: Txt.regular16("Movie Button", color: context.colors.WHITE),
-                  onTap: () {
-                    /// safeRun works same as try..catch along with enhanced functionality
-                    safeRun(
-                      name: "Movie Button",
-                      isEnabled: true,
-                      logEnabled: true,
-                      tryBlock: () {
-                        /// todo : implement on click logic
-                        devlog("Movie Button Clicked");
-                      },
-                      errorHandler: (e) {
-                        /// todo : handle error
-                        devlogError("Error occured on Movie Button click - $e");
-                      },
-                    );
-                  },
-                ),
-              );
+          child: Consumer<MovieProvider>(builder: (context, state, _) {
+            if (state.state ==
+                ViewState.loading /* or use [state.isLoading] */) {
+              return Center(child: CircularProgressIndicator());
             }
-          ),
+
+            if (state.state == ViewState.error) {
+              return Center(
+                  child: Txt.title18(state.errorMessage, color: Colors.red));
+            }
+
+            return Center(
+              child: CustomElevatedButton(
+                child:
+                    Txt.regular16("Movie Button", color: context.colors.WHITE),
+                onTap: () {
+                  /// safeRun works same as try..catch along with enhanced functionality
+                  safeRun(
+                    name: "Movie Button",
+                    isEnabled: true,
+                    logEnabled: true,
+                    tryBlock: () {
+                      /// todo : implement on click logic
+                      devlog("Movie Button Clicked");
+                    },
+                    errorHandler: (e) {
+                      /// todo : handle error
+                      devlogError("Error occured on Movie Button click - $e");
+                    },
+                  );
+                },
+              ),
+            );
+          }),
         ),
       ),
     );

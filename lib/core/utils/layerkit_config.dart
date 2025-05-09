@@ -4,7 +4,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'dart:io';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:layer_kit/layer_kit.dart';
@@ -70,7 +69,6 @@ class KitConfig {
   static ShapeBorder? defaultDialogShape;
   static String defaultCurrencySymbol = RS;
 
-
   /// Initialize LayerKitConfig with custom parameters
   static void init({
     // Environment parameters
@@ -121,7 +119,8 @@ class KitConfig {
   }) {
     // Environment configuration
     ThemeConfig.init(context);
-    RouteConfig.setDefaultTransition(transitionType ?? KitConfig.transitionType);
+    RouteConfig.setDefaultTransition(
+        transitionType ?? KitConfig.transitionType);
 
     KitConfig.envType = envType ?? KitConfig.envType;
     KitConfig.showApiReqLog = showApiReqLog ?? KitConfig.showApiReqLog;
@@ -132,39 +131,59 @@ class KitConfig {
 
     // UI/UX configuration
     KitConfig.transitionType = transitionType ?? KitConfig.transitionType;
-    KitConfig.textBoldSizeGlobal = textBoldSizeGlobal ?? KitConfig.textBoldSizeGlobal;
-    KitConfig.textPrimarySizeGlobal = textPrimarySizeGlobal ?? KitConfig.textPrimarySizeGlobal;
-    KitConfig.textSecondarySizeGlobal = textSecondarySizeGlobal ?? KitConfig.textSecondarySizeGlobal;
-    KitConfig.fontFamilyBoldGlobal = fontFamilyBoldGlobal ?? KitConfig.fontFamilyBoldGlobal;
-    KitConfig.fontFamilyPrimaryGlobal = fontFamilyPrimaryGlobal ?? KitConfig.fontFamilyPrimaryGlobal;
-    KitConfig.fontFamilySecondaryGlobal = fontFamilySecondaryGlobal ?? KitConfig.fontFamilySecondaryGlobal;
-    KitConfig.fontWeightBoldGlobal = fontWeightBoldGlobal ?? KitConfig.fontWeightBoldGlobal;
-    KitConfig.fontWeightPrimaryGlobal = fontWeightPrimaryGlobal ?? KitConfig.fontWeightPrimaryGlobal;
-    KitConfig.fontWeightSecondaryGlobal = fontWeightSecondaryGlobal ?? KitConfig.fontWeightSecondaryGlobal;
+    KitConfig.textBoldSizeGlobal =
+        textBoldSizeGlobal ?? KitConfig.textBoldSizeGlobal;
+    KitConfig.textPrimarySizeGlobal =
+        textPrimarySizeGlobal ?? KitConfig.textPrimarySizeGlobal;
+    KitConfig.textSecondarySizeGlobal =
+        textSecondarySizeGlobal ?? KitConfig.textSecondarySizeGlobal;
+    KitConfig.fontFamilyBoldGlobal =
+        fontFamilyBoldGlobal ?? KitConfig.fontFamilyBoldGlobal;
+    KitConfig.fontFamilyPrimaryGlobal =
+        fontFamilyPrimaryGlobal ?? KitConfig.fontFamilyPrimaryGlobal;
+    KitConfig.fontFamilySecondaryGlobal =
+        fontFamilySecondaryGlobal ?? KitConfig.fontFamilySecondaryGlobal;
+    KitConfig.fontWeightBoldGlobal =
+        fontWeightBoldGlobal ?? KitConfig.fontWeightBoldGlobal;
+    KitConfig.fontWeightPrimaryGlobal =
+        fontWeightPrimaryGlobal ?? KitConfig.fontWeightPrimaryGlobal;
+    KitConfig.fontWeightSecondaryGlobal =
+        fontWeightSecondaryGlobal ?? KitConfig.fontWeightSecondaryGlobal;
 
     // Button configuration
-    KitConfig.defaultAppButtonRadius = defaultAppButtonRadius ?? KitConfig.defaultAppButtonRadius;
-    KitConfig.defaultAppButtonElevation = defaultAppButtonElevation ?? KitConfig.defaultAppButtonElevation;
+    KitConfig.defaultAppButtonRadius =
+        defaultAppButtonRadius ?? KitConfig.defaultAppButtonRadius;
+    KitConfig.defaultAppButtonElevation =
+        defaultAppButtonElevation ?? KitConfig.defaultAppButtonElevation;
 
     // InkWell configuration
-    KitConfig.defaultInkWellSplashColor = defaultInkWellSplashColor ?? KitConfig.defaultInkWellSplashColor;
-    KitConfig.defaultInkWellHoverColor = defaultInkWellHoverColor ?? KitConfig.defaultInkWellHoverColor;
-    KitConfig.defaultInkWellHighlightColor = defaultInkWellHighlightColor ?? KitConfig.defaultInkWellHighlightColor;
-    KitConfig.defaultInkWellRadius = defaultInkWellRadius ?? KitConfig.defaultInkWellRadius;
+    KitConfig.defaultInkWellSplashColor =
+        defaultInkWellSplashColor ?? KitConfig.defaultInkWellSplashColor;
+    KitConfig.defaultInkWellHoverColor =
+        defaultInkWellHoverColor ?? KitConfig.defaultInkWellHoverColor;
+    KitConfig.defaultInkWellHighlightColor =
+        defaultInkWellHighlightColor ?? KitConfig.defaultInkWellHighlightColor;
+    KitConfig.defaultInkWellRadius =
+        defaultInkWellRadius ?? KitConfig.defaultInkWellRadius;
 
     // Shadow configuration
-    KitConfig.shadowColorGlobal = shadowColorGlobal ?? KitConfig.shadowColorGlobal;
+    KitConfig.shadowColorGlobal =
+        shadowColorGlobal ?? KitConfig.shadowColorGlobal;
     KitConfig.defaultElevation = defaultElevation ?? KitConfig.defaultElevation;
     KitConfig.defaultRadius = defaultRadius ?? KitConfig.defaultRadius;
-    KitConfig.defaultBlurRadius = defaultBlurRadius ?? KitConfig.defaultBlurRadius;
-    KitConfig.defaultSpreadRadius = defaultSpreadRadius ?? KitConfig.defaultSpreadRadius;
-    KitConfig.defaultAppBarElevation = defaultAppBarElevation ?? KitConfig.defaultAppBarElevation;
+    KitConfig.defaultBlurRadius =
+        defaultBlurRadius ?? KitConfig.defaultBlurRadius;
+    KitConfig.defaultSpreadRadius =
+        defaultSpreadRadius ?? KitConfig.defaultSpreadRadius;
+    KitConfig.defaultAppBarElevation =
+        defaultAppBarElevation ?? KitConfig.defaultAppBarElevation;
 
     // Other settings
-    KitConfig.passwordLengthGlobal = passwordLengthGlobal ?? KitConfig.passwordLengthGlobal;
-    KitConfig.defaultDialogShape = defaultDialogShape ?? KitConfig.defaultDialogShape;
-    KitConfig.defaultCurrencySymbol = defaultCurrencySymbol ?? KitConfig.defaultCurrencySymbol;
-
+    KitConfig.passwordLengthGlobal =
+        passwordLengthGlobal ?? KitConfig.passwordLengthGlobal;
+    KitConfig.defaultDialogShape =
+        defaultDialogShape ?? KitConfig.defaultDialogShape;
+    KitConfig.defaultCurrencySymbol =
+        defaultCurrencySymbol ?? KitConfig.defaultCurrencySymbol;
   }
-
 }

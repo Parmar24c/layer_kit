@@ -10,8 +10,10 @@ import 'package:layer_kit/generator/project_generator.dart';
 void main(List<String> arguments) {
   final parser = ArgParser()
     ..addOption('feature', abbr: 'f', help: 'Generate a feature with name')
-    ..addFlag('project', abbr: 'p', help: 'Generate full project structure', defaultsTo: false)
-    ..addFlag('help', abbr: 'h', help: 'Display this help information', negatable: false);
+    ..addFlag('project',
+        abbr: 'p', help: 'Generate full project structure', defaultsTo: false)
+    ..addFlag('help',
+        abbr: 'h', help: 'Display this help information', negatable: false);
 
   final argResults = parser.parse(arguments);
 
@@ -23,9 +25,8 @@ void main(List<String> arguments) {
   if (argResults['project']) {
     print('🛠 Generating full project...');
     final generator = ProjectGenerator();
-    final res =  generator.generateFullProject();
-    if(res)
-    print('✅  Project generated successfully!');
+    final res = generator.generateFullProject();
+    if (res) print('✅  Project generated successfully!');
     return;
   } else if (argResults['feature'] != null) {
     final featureName = argResults['feature']!;

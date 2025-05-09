@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'dart:typed_data';
@@ -52,7 +52,8 @@ class ImageUtils {
 
   static Future<String?> pickImage({required ImageSource source}) async {
     try {
-      final image = await ImagePicker().pickImage(source: source, imageQuality: 80, maxWidth: 800, maxHeight: 800);
+      final image = await ImagePicker().pickImage(
+          source: source, imageQuality: 80, maxWidth: 800, maxHeight: 800);
 
       // If the user cancels or presses back, `image` will be null
       if (image == null) {
@@ -71,7 +72,8 @@ class ImageUtils {
   static Future<List<String?>> pickMultipleImages({int? limit}) async {
     try {
       devlog("LIMIT : $limit");
-      final images = await ImagePicker().pickMultiImage(imageQuality: 80, maxWidth: 800, maxHeight: 800, limit: limit);
+      final images = await ImagePicker().pickMultiImage(
+          imageQuality: 80, maxWidth: 800, maxHeight: 800, limit: limit);
       if (images.isEmpty) return [];
       final imagesPath = images.map((e) => e.path).toList();
       return imagesPath;
@@ -95,7 +97,8 @@ class ImageUtils {
     }
   }
 
-  static Future<String> cropImage(BuildContext context, {String? title, required String imagePath, required Size ratio}) async {
+  static Future<String> cropImage(BuildContext context,
+      {String? title, required String imagePath, required Size ratio}) async {
     return imagePath;
     // CroppedFile? croppedFile = await ImageCropper().cropImage(
     //   sourcePath: imagePath,
@@ -154,15 +157,25 @@ class ImageUtils {
                       icon: fileType.icon,
                       onTap: () async {
                         final List<String?> imagePaths = switch (fileType) {
-                          UploadType.cameraImage => [await pickImage(source: ImageSource.camera)],
-                          UploadType.cameraVideo => [await pickVideo(source: ImageSource.camera)],
-                          UploadType.galleryImage => [await pickImage(source: ImageSource.gallery)],
-                          UploadType.galleryVideo => [await pickVideo(source: ImageSource.gallery)],
-                          UploadType.galleryMultipleImages => await pickMultipleImages(limit: limit),
+                          UploadType.cameraImage => [
+                              await pickImage(source: ImageSource.camera)
+                            ],
+                          UploadType.cameraVideo => [
+                              await pickVideo(source: ImageSource.camera)
+                            ],
+                          UploadType.galleryImage => [
+                              await pickImage(source: ImageSource.gallery)
+                            ],
+                          UploadType.galleryVideo => [
+                              await pickVideo(source: ImageSource.gallery)
+                            ],
+                          UploadType.galleryMultipleImages =>
+                            await pickMultipleImages(limit: limit),
                           // UploadType.pdf => (await FilePicker.platform.pickFiles(allowMultiple: false, dialogTitle: "Pick PDF file", type: FileType.custom, allowedExtensions: ['pdf']))?.paths ?? []
                           _ => [],
                         };
-                        Navigator.pop(ctx, PickedImage(paths: imagePaths, type: fileType));
+                        Navigator.pop(ctx,
+                            PickedImage(paths: imagePaths, type: fileType));
                       });
                 },
               ),
@@ -179,12 +192,13 @@ class _MediaTile extends StatelessWidget {
   final IconData icon;
   final VoidCallback onTap;
 
-  const _MediaTile({required this.title, required this.icon, required this.onTap});
+  const _MediaTile(
+      {required this.title, required this.icon, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Txt.regular16(title) ,
+      title: Txt.regular16(title),
       leading: Icon(icon, color: context.colors.primary),
       onTap: onTap,
     );

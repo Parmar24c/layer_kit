@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:layer_kit_example/config/theme/app_colors.dart';
@@ -23,7 +23,9 @@ class NetworkCheckerWidget extends StatelessWidget {
     NetworkStatus networkStatus = Provider.of<NetworkStatus>(context);
 
     return Scaffold(
-      body: networkStatus == NetworkStatus.online ? child : const NoInternetWdget(),
+      body: networkStatus == NetworkStatus.online
+          ? child
+          : const NoInternetWdget(),
     );
 
     // return Scaffold(
@@ -63,7 +65,8 @@ class NoInternetWdget extends StatelessWidget {
             children: [
               Icon(Icons.wifi_off_sharp, size: 30.w),
               Txt("No Internet", fontSize: 4.t, color: context.colors.primary),
-              Txt("Check your Internet Connection..!", fontSize: 1.5.t, color: context.colors.black),
+              Txt("Check your Internet Connection..!",
+                  fontSize: 1.5.t, color: context.colors.black),
               SizedBox(height: 2.h),
               SizedBox(
                 width: 55.w,
@@ -72,7 +75,10 @@ class NoInternetWdget extends StatelessWidget {
                     onPressed: () {
                       Di.sl<NetworkService>().checkConnection();
                     },
-                    child: Txt("Retry", color: context.colors.WHITE, fontSize: 2.t, fontWeight: FontWeight.w600)),
+                    child: Txt("Retry",
+                        color: context.colors.WHITE,
+                        fontSize: 2.t,
+                        fontWeight: FontWeight.w600)),
               )
             ],
           ),

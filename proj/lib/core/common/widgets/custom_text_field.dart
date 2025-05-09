@@ -87,7 +87,14 @@ class CustomTextField extends StatelessWidget {
             },
       style: context.textTheme?.regular14,
       decoration: customInputDecoration(
-          context: context, radius: radius, labelText: labelText, hintText: hintText, fontSize: fontSize, contentPadding: contentPadding, suffixIcon: suffixIcon, prefixIcon: prefixIcon),
+          context: context,
+          radius: radius,
+          labelText: labelText,
+          hintText: hintText,
+          fontSize: fontSize,
+          contentPadding: contentPadding,
+          suffixIcon: suffixIcon,
+          prefixIcon: prefixIcon),
     );
   }
 }
@@ -117,11 +124,15 @@ InputDecoration customInputDecoration({
     suffixIcon: suffixIcon,
     prefixIcon: prefixIcon,
     hintText: hintText,
-    hintStyle: context.textTheme?.regular14.copyWith(fontWeight: FontWeight.w300),
+    hintStyle:
+        context.textTheme?.regular14.copyWith(fontWeight: FontWeight.w300),
     labelText: labelText,
-    labelStyle: context.textTheme?.regular14.copyWith(fontWeight: FontWeight.w300),
-    errorStyle: context.textTheme?.regular14.copyWith(color: context.colors.red80),
-    contentPadding: contentPadding ?? EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
+    labelStyle:
+        context.textTheme?.regular14.copyWith(fontWeight: FontWeight.w300),
+    errorStyle:
+        context.textTheme?.regular14.copyWith(color: context.colors.red80),
+    contentPadding:
+        contentPadding ?? EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(radius),
       // borderSide: const BorderSide(color: AppColors.theme),

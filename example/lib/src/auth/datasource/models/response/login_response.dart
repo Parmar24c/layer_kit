@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 class LoginResponse {
@@ -8,7 +8,8 @@ class LoginResponse {
   final String message;
   final List<dynamic>? data;
 
-  LoginResponse({required this.status, required this.message, required this.data});
+  LoginResponse(
+      {required this.status, required this.message, required this.data});
 
   /// THIS IS fromJson METHOD THAT IS ONLY REQUIRED IN RESPONSE
   /// IF YOU WANT TO STORE DATA OFFLINE THAN YOU NEED TO toJson METHOD

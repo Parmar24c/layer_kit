@@ -28,8 +28,8 @@ dependencies:
 #  json_annotation: ^4.8.1
 #  dartz: ^0.10.1
 #  internet_connection_checker:
-  flutter_easy_routing:
-  responsive_theme:
+  flutter_easy_routing: ^0.0.4
+  responsive_theme: ^0.0.1
 
 dev_dependencies:
   flutter_test:

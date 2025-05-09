@@ -9,7 +9,8 @@ class Apis {
   static const stagingBaseUrl = "https://staging-example.com";
   static const liveBaseUrl = "https://example.com";
 
-  static String get baseUrl => KitConfig.envType.isProduction ? liveBaseUrl : stagingBaseUrl;
+  static String get baseUrl =>
+      KitConfig.envType.isProduction ? liveBaseUrl : stagingBaseUrl;
   static const name = "api";
   static const version = "v1";
   static String url = "$baseUrl/$name/$version";

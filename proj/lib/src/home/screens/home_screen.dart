@@ -23,7 +23,8 @@ class HomeScreen extends StatefulWidget with BaseRoute {
   Routes get routeName => Routes.home;
 }
 
-class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMixin<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen>
+    with AutomaticKeepAliveClientMixin<HomeScreen> {
   @override
   bool get wantKeepAlive => true;
 
@@ -37,7 +38,8 @@ class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMi
             child: ListView(
               padding: Insets.medium18.paddingHorizontal,
               children: [
-                ...List.generate(200, (index) => Txt("${"homeScreen".tr()} $index")),
+                ...List.generate(
+                    200, (index) => Txt("${"homeScreen".tr()} $index")),
               ],
             ),
           ),

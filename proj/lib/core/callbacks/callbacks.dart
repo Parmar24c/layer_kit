@@ -12,7 +12,7 @@ import 'package:layer_kit/layer_kit.dart';
 import '../utils/common_toast.dart';
 
 typedef BoolCallback = Future<bool> Function();
-typedef ErrorListener =  Function(Object e);
+typedef ErrorListener = Function(Object e);
 
 void widgetBinding(void Function(Duration _) callback) {
   WidgetsBinding.instance.addPostFrameCallback(callback);
@@ -60,7 +60,8 @@ Future<T?> safeRun<T>({
     stopwatch.stop();
 
     if (logEnabled && KitConfig.showDevLog) {
-      debugPrint('✅ Completed "$name" in ${(stopwatch.elapsedMilliseconds / 1000).toStringAsFixed(2)}s');
+      debugPrint(
+          '✅ Completed "$name" in ${(stopwatch.elapsedMilliseconds / 1000).toStringAsFixed(2)}s');
     }
 
     return result;
@@ -76,7 +77,8 @@ Future<T?> safeRun<T>({
     stopwatch.stop();
 
     if (logEnabled && KitConfig.showDevLog) {
-      debugPrint('✅ Completed "$name" in ${(stopwatch.elapsedMilliseconds/1000).toStringAsFixed(2)}s');
+      debugPrint(
+          '✅ Completed "$name" in ${(stopwatch.elapsedMilliseconds / 1000).toStringAsFixed(2)}s');
     }
 
     return result;
@@ -162,11 +164,11 @@ Future<bool> apiCallback({
     } on ServerException catch (e) {
       devlogError("ERROR - PROVIDER - SERVER_EXCEPTION -> $name : $e");
       showSnackbar(e.message);
-      if(errorListener != null) errorListener(e);
+      if (errorListener != null) errorListener(e);
     } catch (e) {
       devlogError("ERROR - PROVIDER - CATCH_ERROR -> $name : $e");
       showSnackbar("Something went wrong.!");
-      if(errorListener != null) errorListener(e);
+      if (errorListener != null) errorListener(e);
     }
   }
   return isSuccess;

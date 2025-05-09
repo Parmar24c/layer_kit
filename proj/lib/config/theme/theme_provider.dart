@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:flutter/material.dart';
@@ -23,11 +23,13 @@ class ThemeProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void loadCurrentTheme(BuildContext context, {ThemeMode themeMode = ThemeMode.system}) async {
+  void loadCurrentTheme(BuildContext context,
+      {ThemeMode themeMode = ThemeMode.system}) async {
     final isDarkMode = GlobalPrefs.getTheme;
     if (isDarkMode == null) {
-      final useDarkTheme = switch(themeMode){
-        ThemeMode.system => AppResponsiveTheme.colorModeOf(context) == AppThemeMode.dark,
+      final useDarkTheme = switch (themeMode) {
+        ThemeMode.system =>
+          AppResponsiveTheme.colorModeOf(context) == AppThemeMode.dark,
         ThemeMode.light => false,
         ThemeMode.dark => true,
       };

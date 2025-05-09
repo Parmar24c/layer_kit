@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:layer_kit_example/config/data/dio/dio_client.dart';
@@ -10,7 +10,6 @@ import 'package:layer_kit_example/src/auth/datasource/repo/auth_repo.dart';
 
 import '../../../../core/callbacks/callbacks.dart';
 import '../../../../core/constants/api_constants.dart';
-
 
 class AuthRepoImpl implements AuthRepo {
   final DioClient _dioClient;

@@ -1,9 +1,9 @@
 import 'package:layer_kit/core/utils/devlog.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 class UrlLauncher {
-  static Future<bool> launchNetworkUrl(String? url, {String prefix = "+91"}) async {
+  static Future<bool> launchNetworkUrl(String? url,
+      {String prefix = "+91"}) async {
     bool success = false;
     try {
       if (url == null) throw "Mobile number not found!";
@@ -19,7 +19,8 @@ class UrlLauncher {
     return success;
   }
 
-  static Future<bool> launchMobile(String? mobile, {String prefix = "+91"}) async {
+  static Future<bool> launchMobile(String? mobile,
+      {String prefix = "+91"}) async {
     bool success = false;
     final phoneNumber = prefix + (mobile ?? "");
     try {
@@ -36,7 +37,8 @@ class UrlLauncher {
     return success;
   }
 
-  static Future<bool> launchEmail({required String? email, String subject = "", String body = ""}) async {
+  static Future<bool> launchEmail(
+      {required String? email, String subject = "", String body = ""}) async {
     bool success = false;
     try {
       if (email == null || email.isEmpty) throw "Email not provided!";

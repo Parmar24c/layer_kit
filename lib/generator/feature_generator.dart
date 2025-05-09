@@ -20,7 +20,8 @@ class FeatureGenerator {
     // Check if feature already exists
     final featureDir = Directory(base);
     if (featureDir.existsSync()) {
-      stdout.write('⚠️ Feature "${_feature.snakeCase}" already exists. Do you want to override it? (y/n): ');
+      stdout.write(
+          '⚠️ Feature "${_feature.snakeCase}" already exists. Do you want to override it? (y/n): ');
       final response = stdin.readLineSync()?.toLowerCase() ?? 'n';
       if (response != 'y') {
         print('❌ Feature generation cancelled.');
@@ -51,7 +52,7 @@ class FeatureGenerator {
 
     final templateLib = foundPath;
 
-    final templateDir = Directory(path.join(templateLib,"src", "feature"));
+    final templateDir = Directory(path.join(templateLib, "src", "feature"));
 
     if (!templateDir.existsSync()) {
       print('❌ Template folder not found: ${templateDir.path}');
@@ -68,7 +69,8 @@ class FeatureGenerator {
     }
 
     // Update routes file
-    _updateRoutesFile(path.join(Directory.current.path, 'lib/config/routes/routes.dart'));
+    _updateRoutesFile(
+        path.join(Directory.current.path, 'lib/config/routes/routes.dart'));
 
     print('✅  Feature "${_feature.snakeCase}" generated successfully!');
   }
@@ -126,7 +128,8 @@ class FeatureGenerator {
 
     // Create new route with proper indentation
     final indent = lastRoute.substring(0, lastRoute.indexOf('static'));
-    final newRoute = '${indent}static const ${_feature.camelCase} = Routes._("${_feature.camelCase}");';
+    final newRoute =
+        '${indent}static const ${_feature.camelCase} = Routes._("${_feature.camelCase}");';
 
     // Insert the new route after the last route
     final updatedContent = content.substring(0, lastMatch.end) +

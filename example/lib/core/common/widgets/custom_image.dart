@@ -30,7 +30,7 @@ class CustomImage extends StatelessWidget {
   final bool showOriginal;
   final ColorFilter? colorFilter;
 
-   CustomImage({
+  CustomImage({
     super.key,
     this.url,
     this.imageData,
@@ -51,7 +51,7 @@ class CustomImage extends StatelessWidget {
           size == null || (height == null && width == null),
           "\n\nIf you provide size, it will be used as height & width. Otherwise, specify height & width separately.\n",
         ) {
-    this.borderRadius = borderRadius ??  KitConfig.defaultRadius;
+    this.borderRadius = borderRadius ?? KitConfig.defaultRadius;
   }
 
   @override
@@ -61,11 +61,16 @@ class CustomImage extends StatelessWidget {
             imageUrl: url!,
             maxHeightDiskCache: showOriginal ? null : 400,
             maxWidthDiskCache: showOriginal ? null : 300,
-            errorWidget: (context, url, error) => _buildContainer(context, placeHolderImage, BoxFit.cover, Colors.grey.shade100),
-            placeholder: (context, url) => Skeletonizer(child: _buildContainer(context, placeHolderImage, BoxFit.cover, Colors.grey.shade100)),
-            imageBuilder: (context, image) => _buildContainer(context, image, fit ?? BoxFit.cover, color),
+            errorWidget: (context, url, error) => _buildContainer(
+                context, placeHolderImage, BoxFit.cover, Colors.grey.shade100),
+            placeholder: (context, url) => Skeletonizer(
+                child: _buildContainer(context, placeHolderImage, BoxFit.cover,
+                    Colors.grey.shade100)),
+            imageBuilder: (context, image) =>
+                _buildContainer(context, image, fit ?? BoxFit.cover, color),
           )
-        : _buildContainer(context, _resolveImageProvider(), fit ?? BoxFit.cover, color);
+        : _buildContainer(
+            context, _resolveImageProvider(), fit ?? BoxFit.cover, color);
   }
 
   DecorationImage? decorationImage(BuildContext context) {
@@ -99,13 +104,16 @@ class CustomImage extends StatelessWidget {
     }
   }
 
-  Container _buildContainer(BuildContext context, ImageProvider image, BoxFit fit, Color? color) {
+  Container _buildContainer(
+      BuildContext context, ImageProvider image, BoxFit fit, Color? color) {
     return Container(
       height: size ?? height,
       width: size ?? width,
       decoration: BoxDecoration(
         color: color,
-        borderRadius: shape == BoxShape.circle ? null : (radius ?? BorderRadius.circular(borderRadius)),
+        borderRadius: shape == BoxShape.circle
+            ? null
+            : (radius ?? BorderRadius.circular(borderRadius)),
         border: border,
         boxShadow: boxShadow,
         shape: shape ?? BoxShape.rectangle,

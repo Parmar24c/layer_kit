@@ -45,7 +45,11 @@ Future<void> main() async {
   runApp(MultiProvider(
     providers: Di.changeNotifierProviders,
     child: EasyLocalization(
-        supportedLocales: Locl.values.map((Locl e) => e.locale).toList(), path: 'lib/config/lang', fallbackLocale: Locl.en.locale, assetLoader: RootBundleAssetLoader(), child: MyApp()),
+        supportedLocales: Locl.values.map((Locl e) => e.locale).toList(),
+        path: 'lib/config/lang',
+        fallbackLocale: Locl.en.locale,
+        assetLoader: RootBundleAssetLoader(),
+        child: MyApp()),
   ));
 }
 
@@ -106,7 +110,8 @@ class _MyAppState extends State<MyApp> {
               title: AppConsts.appName,
               navigatorKey: AppRouter.navigatorKey,
               debugShowCheckedModeBanner: false,
-              onGenerateRoute: (s) => AppRouter.generateRoute(s, SplashScreen()),
+              onGenerateRoute: (s) =>
+                  AppRouter.generateRoute(s, SplashScreen()),
               scrollBehavior: const StretchScrollBehavior(),
               initialRoute: Routes.splash.path,
               localizationsDelegates: context.localizationDelegates,
@@ -115,7 +120,8 @@ class _MyAppState extends State<MyApp> {
               theme: state.darkTheme ? ThemeData.dark() : ThemeData.light(),
               builder: (context, child) {
                 return MediaQuery(
-                  data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+                  data: MediaQuery.of(context)
+                      .copyWith(textScaler: const TextScaler.linear(1.0)),
                   child: child ?? SizedBox(),
                 );
               },

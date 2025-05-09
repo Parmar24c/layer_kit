@@ -12,7 +12,6 @@ import 'package:layer_kit/layer_kit.dart';
 import '../../../config/routes/routes.dart';
 
 class ProfileScreen extends StatefulWidget with BaseRoute {
-
   const ProfileScreen({super.key});
 
   @override
@@ -25,7 +24,8 @@ class ProfileScreen extends StatefulWidget with BaseRoute {
   Routes get routeName => Routes.profile;
 }
 
-class _ProfileScreenState extends State<ProfileScreen> with AutomaticKeepAliveClientMixin<ProfileScreen> {
+class _ProfileScreenState extends State<ProfileScreen>
+    with AutomaticKeepAliveClientMixin<ProfileScreen> {
   @override
   bool get wantKeepAlive => true;
 
@@ -39,7 +39,8 @@ class _ProfileScreenState extends State<ProfileScreen> with AutomaticKeepAliveCl
             child: ListView(
               padding: Insets.medium16.paddingHorizontal,
               children: [
-                ...List.generate(200, (index) => Txt("${"profileScreen".tr()} $index")),
+                ...List.generate(
+                    200, (index) => Txt("${"profileScreen".tr()} $index")),
               ],
             ),
           ),

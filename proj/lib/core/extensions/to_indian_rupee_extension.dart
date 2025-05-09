@@ -1,10 +1,9 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:intl/intl.dart';
-
 
 var _format = NumberFormat.currency(
   name: "",
@@ -14,12 +13,13 @@ var _format = NumberFormat.currency(
   symbol: '₹',
 );
 
-NumberFormat _formatWith({bool showSymbol = true, int decimalPoint = 2}) => NumberFormat.currency(
-  name: "",
-  locale: 'HI',
-  decimalDigits: decimalPoint,
-  symbol: showSymbol ? '₹' : "",
-);
+NumberFormat _formatWith({bool showSymbol = true, int decimalPoint = 2}) =>
+    NumberFormat.currency(
+      name: "",
+      locale: 'HI',
+      decimalDigits: decimalPoint,
+      symbol: showSymbol ? '₹' : "",
+    );
 
 extension IndianCurrencyFormatt on num {
   String get toIndianRupee {
@@ -27,7 +27,8 @@ extension IndianCurrencyFormatt on num {
   }
 
   String toIndianRupeeWith({bool showSymbol = true, int decimalPoint = 2}) {
-    return _formatWith(showSymbol: showSymbol, decimalPoint: decimalPoint).format(this);
+    return _formatWith(showSymbol: showSymbol, decimalPoint: decimalPoint)
+        .format(this);
   }
 }
 
@@ -37,7 +38,8 @@ extension IndianCurrencyFormattForInt on int {
   }
 
   String toIndianRupeeWith({bool showSymbol = true, int decimalPoint = 2}) {
-    return _formatWith(showSymbol: showSymbol, decimalPoint: decimalPoint).format(this);
+    return _formatWith(showSymbol: showSymbol, decimalPoint: decimalPoint)
+        .format(this);
   }
 }
 
@@ -47,6 +49,7 @@ extension IndianCurrencyFormattForString on String {
   }
 
   String toIndianRupeeWith({bool showSymbol = true, int decimalPoint = 2}) {
-    return _formatWith(showSymbol: showSymbol, decimalPoint: decimalPoint).format(num.tryParse(this) ?? 0);
+    return _formatWith(showSymbol: showSymbol, decimalPoint: decimalPoint)
+        .format(num.tryParse(this) ?? 0);
   }
 }

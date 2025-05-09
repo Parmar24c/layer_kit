@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:layer_kit_example/config/theme/app_colors.dart';
@@ -55,13 +55,19 @@ class CustomElevatedButton extends StatelessWidget {
       borderRadius: radius ?? KitConfig.defaultRadius.borderRadiusCircular,
       child: Container(
         alignment: alignment,
-        padding: padding ?? EdgeInsets.symmetric(horizontal: Insets.medium16, vertical: Insets.xsmall8),
+        padding: padding ??
+            EdgeInsets.symmetric(
+                horizontal: Insets.medium16, vertical: Insets.xsmall8),
         height: size ?? height,
         width: size ?? width,
         decoration: BoxDecoration(
           color: color ?? context.colors.primary,
           borderRadius: radius ?? KitConfig.defaultRadius.borderRadiusCircular,
-          border: border == null  ? null : Border.all(color: border?.color ?? context.colors.primary, width: border?.width ?? 1),
+          border: border == null
+              ? null
+              : Border.all(
+                  color: border?.color ?? context.colors.primary,
+                  width: border?.width ?? 1),
           shape: shape ?? BoxShape.rectangle,
         ),
         child: child,

@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -40,11 +40,15 @@ class NetworkService {
   }
 
   void checkConnection() {
-    Connectivity().checkConnectivity().then((result) => controller.add(_networkStatus(result)));
+    Connectivity()
+        .checkConnectivity()
+        .then((result) => controller.add(_networkStatus(result)));
   }
 
   NetworkStatus _networkStatus(ConnectivityResult connectivityResult) {
-    return connectivityResult == ConnectivityResult.none ? NetworkStatus.offline : NetworkStatus.online;
+    return connectivityResult == ConnectivityResult.none
+        ? NetworkStatus.offline
+        : NetworkStatus.online;
   }
 
   Future<bool> get isConnected async {

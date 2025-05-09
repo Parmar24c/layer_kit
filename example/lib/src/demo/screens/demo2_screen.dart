@@ -23,7 +23,6 @@ class Demo2Screen extends StatefulWidget with BaseRoute {
 
   @override
   Widget get screen => this;
-
 }
 
 class _Demo2ScreenState extends State<Demo2Screen> {
@@ -43,7 +42,8 @@ class _Demo2ScreenState extends State<Demo2Screen> {
                   showLoader(context);
                   await Future.delayed(2.seconds);
                   hideLoader();
-                  context.popUntil((route) => Routes.appScaffold.path == route.settings.name);
+                  context.popUntil((route) =>
+                      Routes.appScaffold.path == route.settings.name);
                 },
               );
             },

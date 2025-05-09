@@ -15,7 +15,8 @@ class AuthProvider extends BaseViewModel {
   final AuthRepo _authRepo;
   final NetworkService _networkService;
 
-  AuthProvider({required AuthRepo authRepo, required NetworkService networkService})
+  AuthProvider(
+      {required AuthRepo authRepo, required NetworkService networkService})
       : _authRepo = authRepo,
         _networkService = networkService;
 

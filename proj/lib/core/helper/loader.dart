@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:layer_kit/core/utils/devlog.dart';
@@ -51,10 +51,19 @@ class LoaderPage extends StatelessWidget {
               child: Container(
                 margin: const EdgeInsets.all(20),
                 padding: const EdgeInsets.all(10),
-                decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white, boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 10, offset: Offset(1, 1))]),
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 10,
+                          offset: Offset(1, 1))
+                    ]),
                 child: Column(
                   children: <Widget>[
-                    CupertinoActivityIndicator(color: context.colors.primary, radius: 20),
+                    CupertinoActivityIndicator(
+                        color: context.colors.primary, radius: 20),
                   ],
                 ),
               ),
@@ -64,6 +73,4 @@ class LoaderPage extends StatelessWidget {
       ),
     );
   }
-
 }
-

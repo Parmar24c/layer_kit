@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:layer_kit_example/core/helper/global_prefs.dart';
@@ -50,7 +50,8 @@ class DioClient {
         options: options ??
             Options(
               headers: {
-                if (_token != null && _token?.trim() != "") 'Authorization': 'Bearer $_token',
+                if (_token != null && _token?.trim() != "")
+                  'Authorization': 'Bearer $_token',
                 'Content-Type': contentType.value,
               },
             ),
@@ -86,7 +87,8 @@ class DioClient {
         options: options ??
             Options(
               headers: {
-                if (_token != null && _token?.trim() != "") 'Authorization': 'Bearer $_token',
+                if (_token != null && _token?.trim() != "")
+                  'Authorization': 'Bearer $_token',
                 'Content-Type': contentType.value,
               },
             ),
@@ -121,7 +123,8 @@ class DioClient {
         options: options ??
             Options(
               headers: {
-                if (_token != null && _token?.trim() != "") 'Authorization': 'Bearer $_token',
+                if (_token != null && _token?.trim() != "")
+                  'Authorization': 'Bearer $_token',
                 'Content-Type': contentType.value,
               },
             ),
@@ -154,7 +157,8 @@ class DioClient {
         options: options ??
             Options(
               headers: {
-                if (_token != null && _token?.trim() != "") 'Authorization': 'Bearer $_token',
+                if (_token != null && _token?.trim() != "")
+                  'Authorization': 'Bearer $_token',
                 'Content-Type': contentType.value,
               },
             ),
@@ -169,16 +173,16 @@ class DioClient {
   }
 
   Future<void> download(
-      String urlPath,
-      dynamic savePath, {
-        ProgressCallback? onReceiveProgress,
-        Map<String, dynamic>? queryParameters,
-        CancelToken? cancelToken,
-        bool deleteOnError = true,
-        String lengthHeader = Headers.contentLengthHeader,
-        Object? data,
-        Options? options,
-      }) async {
+    String urlPath,
+    dynamic savePath, {
+    ProgressCallback? onReceiveProgress,
+    Map<String, dynamic>? queryParameters,
+    CancelToken? cancelToken,
+    bool deleteOnError = true,
+    String lengthHeader = Headers.contentLengthHeader,
+    Object? data,
+    Options? options,
+  }) async {
     try {
       await _dio.download(
         urlPath,

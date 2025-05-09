@@ -8,7 +8,8 @@ import 'package:flutter/material.dart';
 import 'layerkit_config.dart';
 
 /// returns default InputDecoration for AppTextField widget
-InputDecoration defaultInputDecoration({String? hint, String? label, TextStyle? textStyle}) {
+InputDecoration defaultInputDecoration(
+    {String? hint, String? label, TextStyle? textStyle}) {
   return InputDecoration(
     labelText: label,
     hintText: hint,
@@ -62,7 +63,9 @@ Decoration boxDecorationDefault({
   DecorationImage? image,
 }) {
   return BoxDecoration(
-    borderRadius: (shape != null && shape == BoxShape.circle) ? null : (borderRadius ?? radius()),
+    borderRadius: (shape != null && shape == BoxShape.circle)
+        ? null
+        : (borderRadius ?? radius()),
     boxShadow: boxShadow ?? defaultBoxShadow(),
     color: color ?? Colors.white,
     gradient: gradient,
@@ -85,7 +88,8 @@ Decoration boxDecorationWithRoundedCorners({
 }) {
   return BoxDecoration(
     color: backgroundColor,
-    borderRadius: boxShape == BoxShape.circle ? null : (borderRadius ?? radius()),
+    borderRadius:
+        boxShape == BoxShape.circle ? null : (borderRadius ?? radius()),
     gradient: gradient,
     border: border,
     boxShadow: boxShadow,

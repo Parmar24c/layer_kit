@@ -19,7 +19,6 @@ extension LocaleText on List<String> {
   String tr() => this.map((String e) => e.tr()).toList().join(", ");
 }
 
-
 enum Locl {
   en,
   de,

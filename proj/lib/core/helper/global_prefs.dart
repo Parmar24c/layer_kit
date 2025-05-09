@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -26,7 +26,8 @@ class GlobalPrefs {
   ///
 
   /// TOKEN
-  static void set setToken(String val) => _sp?.setString(PrefKey.token.name, val);
+  static void set setToken(String val) =>
+      _sp?.setString(PrefKey.token.name, val);
   static String get getToken => _sp?.getString(PrefKey.token.name) ?? "";
 
   /// THEME
@@ -36,8 +37,8 @@ class GlobalPrefs {
   ///
   ///
 
-  static bool get isTokenAvailable  {
-    final String token =  getToken;
+  static bool get isTokenAvailable {
+    final String token = getToken;
     return token.isNotEmpty && token.trim() != "";
   }
 

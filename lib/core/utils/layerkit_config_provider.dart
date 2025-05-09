@@ -110,7 +110,8 @@ class LayerKitConfigProvider extends StatefulWidget {
   State<LayerKitConfigProvider> createState() => _LayerKitConfigProviderState();
 }
 
-class _LayerKitConfigProviderState extends State<LayerKitConfigProvider> with WidgetsBindingObserver {
+class _LayerKitConfigProviderState extends State<LayerKitConfigProvider>
+    with WidgetsBindingObserver {
   bool _isInitialized = false;
 
   @override

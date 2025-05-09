@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:layer_kit/layer_kit.dart';
@@ -13,6 +13,5 @@ class HomeProvider extends BaseViewModel {
 
   HomeProvider({
     required NetworkService networkService,
-  })  :
-        _networkService = networkService;
+  }) : _networkService = networkService;
 }

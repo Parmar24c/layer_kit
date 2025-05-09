@@ -42,8 +42,9 @@ class ProjectGenerator {
         return false;
       }
     }
-      // Copy lib directory
-    final libResult = copyDirectory(Directory(templateLib), Directory(targetLib));
+    // Copy lib directory
+    final libResult =
+        copyDirectory(Directory(templateLib), Directory(targetLib));
 
     // Copy pubspec.yaml file
     final templatePubspec = File(path.join(foundPath, 'pubspec.yaml'));
@@ -64,7 +65,7 @@ class ProjectGenerator {
         final relativePath = path.relative(entity.path, from: source.path);
         final newPath = path.join(destination.path, relativePath);
         final newFile = File(newPath);
-        if(relativePath.startsWith("src\\feature"))  continue;
+        if (relativePath.startsWith("src\\feature")) continue;
         newFile.createSync(recursive: true);
         newFile.writeAsBytesSync(entity.readAsBytesSync());
         print('✅  Copied: $relativePath');

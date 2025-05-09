@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:flutter/gestures.dart';
@@ -104,7 +104,6 @@ extension WidgetExtension on Widget? {
       clipBehavior: Clip.antiAliasWithSaveLayer,
     );
   }
-
 
   /// add opacity to parent widget
   Widget opacity({

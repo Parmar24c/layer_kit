@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 extension FormatTime on int {
@@ -11,6 +11,7 @@ extension FormatTime on int {
     String second = sec.toString().length <= 1 ? "0$sec" : "$sec";
     return "$minute : $second";
   }
+
   String get toHHMMSS {
     int hours = (this / 3600).floor();
     int remainingSeconds = this % 3600;
@@ -18,10 +19,11 @@ extension FormatTime on int {
     int seconds = remainingSeconds % 60;
 
     String hourStr = hours.toString().length <= 1 ? "0$hours" : "$hours";
-    String minuteStr = minutes.toString().length <= 1 ? "0$minutes" : "$minutes";
-    String secondStr = seconds.toString().length <= 1 ? "0$seconds" : "$seconds";
+    String minuteStr =
+        minutes.toString().length <= 1 ? "0$minutes" : "$minutes";
+    String secondStr =
+        seconds.toString().length <= 1 ? "0$seconds" : "$seconds";
 
     return "$hourStr : $minuteStr : $secondStr";
   }
-
 }

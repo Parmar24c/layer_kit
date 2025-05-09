@@ -16,7 +16,8 @@ class MovieProvider extends BaseViewModel {
   final MovieRepo _movieRepo;
   final NetworkService _networkService;
 
-  MovieProvider({required MovieRepo movieRepo, required NetworkService networkService})
+  MovieProvider(
+      {required MovieRepo movieRepo, required NetworkService networkService})
       : _movieRepo = movieRepo,
         _networkService = networkService;
 

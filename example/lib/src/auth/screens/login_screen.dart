@@ -36,16 +36,21 @@ class LoginScreen extends StatelessWidget with BaseRoute {
       child: NetworkCheckerWidget(
         child: Scaffold(
           appBar: AppBar(
-            title: Txt.appbar("loginScreen".tr(), color: context.colors.primary),
+            title:
+                Txt.appbar("loginScreen".tr(), color: context.colors.primary),
           ),
           body: SafeArea(
             child: Center(
               child: CustomElevatedButton(
-                child: Txt.regular14("loginWithoutEmailPassword".tr(), color: context.colors.WHITE),
+                child: Txt.regular14("loginWithoutEmailPassword".tr(),
+                    color: context.colors.WHITE),
                 onTap: () {
-                  safeRun(name: "login without email password", tryBlock: () {
-                    context.pushReplacementNamed(MainScreen(initialIndex: 0));
-                  });
+                  safeRun(
+                      name: "login without email password",
+                      tryBlock: () {
+                        context
+                            .pushReplacementNamed(MainScreen(initialIndex: 0));
+                      });
                 },
               ),
             ),

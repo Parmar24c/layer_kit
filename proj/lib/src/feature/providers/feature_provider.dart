@@ -16,7 +16,9 @@ class FeatureProvider extends BaseViewModel {
   final FeatureRepo _featureRepo;
   final NetworkService _networkService;
 
-  FeatureProvider({required FeatureRepo featureRepo, required NetworkService networkService})
+  FeatureProvider(
+      {required FeatureRepo featureRepo,
+      required NetworkService networkService})
       : _featureRepo = featureRepo,
         _networkService = networkService;
 

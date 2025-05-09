@@ -26,7 +26,8 @@ class DemoScreen extends StatefulWidget with BaseRoute {
   Routes get routeName => Routes.demo;
 }
 
-class _DemoScreenState extends State<DemoScreen> with AutomaticKeepAliveClientMixin<DemoScreen> {
+class _DemoScreenState extends State<DemoScreen>
+    with AutomaticKeepAliveClientMixin<DemoScreen> {
   @override
   bool get wantKeepAlive => true;
 
@@ -41,14 +42,18 @@ class _DemoScreenState extends State<DemoScreen> with AutomaticKeepAliveClientMi
               children: [
                 CustomElevatedButton(
                   onTap: () => context.pushNamed(Demo2Screen()),
-                  child: Txt.button("nextScreen".tr(), color: context.colors.WHITE),
+                  child: Txt.button("nextScreen".tr(),
+                      color: context.colors.WHITE),
                 ),
                 VGap.small12(),
                 Expanded(
                   child: ListView(
                     padding: Insets.medium16.paddingHorizontal,
                     children: [
-                      ...List.generate(200, (index) => Txt.regular14("${"demoScreen".tr()} $index")),
+                      ...List.generate(
+                          200,
+                          (index) =>
+                              Txt.regular14("${"demoScreen".tr()} $index")),
                     ],
                   ),
                 ),

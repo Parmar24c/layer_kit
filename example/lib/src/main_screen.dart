@@ -68,7 +68,8 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Txt.appbar("${BottomNavItem.values[currentIndex].title} ${"screen".tr()}"),
+        title: Txt.appbar(
+            "${BottomNavItem.values[currentIndex].title} ${"screen".tr()}"),
         actions: [
           IconButton(
               onPressed: () {
@@ -91,7 +92,9 @@ class _MainScreenState extends State<MainScreen> {
             .map((e) => BottomNavigationBarItem(
                   icon: Icon(
                     e.icon,
-                    color: currentIndex == e.index ? context.colors.primary : context.colors.black,
+                    color: currentIndex == e.index
+                        ? context.colors.primary
+                        : context.colors.black,
                   ),
                   label: e.title,
                 ))

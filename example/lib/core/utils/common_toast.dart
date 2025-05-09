@@ -22,7 +22,11 @@ Future<bool?> showFlutterToast(String msg, {Color? textColor, Color? color}) {
   );
 }
 
-showSnackbar(String msg, {ToastificationType? type, Color? textColor, Color? color, Color? handleColor}) {
+showSnackbar(String msg,
+    {ToastificationType? type,
+    Color? textColor,
+    Color? color,
+    Color? handleColor}) {
   toastification.dismissAll(delayForAnimation: false);
   toastification.show(
     description: Txt(
