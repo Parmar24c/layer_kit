@@ -4,16 +4,28 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'dart:io';
+import 'dart:isolate';
 import 'package:path/path.dart' as path;
 
 class ProjectGenerator {
-  bool generateFullProject() {
-    // Start from the script file path
-    final currentPath = Directory.current.path;
 
-    // Try walking up until we find the correct template path
+  Future<String?> findProjPath() async {
+    // 1. Try resolving using package URI
+    try {
+      final uri = Uri.parse('package:your_package_name/proj/lib/');
+      final resolved = await Isolate.resolvePackageUri(uri);
+
+      if (resolved != null && Directory(resolved.toFilePath()).existsSync()) {
+        // Trim off the /lib to get the base "proj" folder
+        return path.dirname(resolved.toFilePath());
+      }
+    } catch (_) {
+      // Fall back if resolve fails
+    }
+
+    // 2. Fall back to searching from current directory
     String? foundPath;
-    Directory dir = Directory(currentPath);
+    Directory dir = Directory.current;
     while (dir.parent.path != dir.path) {
       final maybeTemplate = Directory(path.join(dir.path, 'proj', 'lib'));
       if (maybeTemplate.existsSync()) {
@@ -22,6 +34,29 @@ class ProjectGenerator {
       }
       dir = dir.parent;
     }
+
+    return foundPath;
+  }
+
+  Future<bool> generateFullProject() async {
+    // // Start from the script file path
+    // final currentPath = Directory.current.path;
+    //
+    // // Try walking up until we find the correct template path
+    // String? foundPath =;
+    // Directory dir = Directory(currentPath);
+    // while (dir.parent.path != dir.path) {
+    //   final maybeTemplate = Directory(path.join(dir.path, 'proj', 'lib'));
+    //   if (maybeTemplate.existsSync()) {
+    //     foundPath = path.join(dir.path, 'proj');
+    //     break;
+    //   }
+    //   dir = dir.parent;
+    // }
+
+
+    final foundPath = await findProjPath();
+
 
     if (foundPath == null) {
       print('❌ Could not locate proj folder in parent directories.');

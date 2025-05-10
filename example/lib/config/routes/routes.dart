@@ -16,5 +16,4 @@ class Routes extends AppRoutes {
   static const demo = Routes._("demo");
   static const demo2 = Routes._("demo2");
   static const profile = Routes._("profile");
-  static const movie = Routes._("movie");
 }

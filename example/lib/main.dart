@@ -99,12 +99,6 @@ class _MyAppState extends State<MyApp> {
 
     return Consumer<ThemeProvider>(builder: (context, state, _) {
       return LayerKitConfigProvider(
-        envType: EnvType.development,
-        defaultRadius: 10,
-        showApiReqLog: false,
-        showApiResLog: true,
-
-        /// other config options
         child: AppResponsiveTheme(
           themeMode: state.theme,
           config: ColorConfig(

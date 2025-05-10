@@ -47,7 +47,6 @@ dependencies:
   url_strategy:
 
   layer_kit:
-    path: "../"
 
 
 dev_dependencies:
