@@ -2,6 +2,6 @@
 
 - Layer Kit - Initial release.
 
-## 0.0.4
+## 0.0.5
 
 - Minor Changes

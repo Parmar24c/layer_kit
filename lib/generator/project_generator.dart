@@ -12,7 +12,7 @@ class ProjectGenerator {
   Future<String?> findProjPath() async {
     // 1. Try resolving using package URI
     try {
-      final uri = Uri.parse('package:your_package_name/proj/lib/');
+      final uri = Uri.parse('package:layer_kit/proj/lib/');
       final resolved = await Isolate.resolvePackageUri(uri);
 
       if (resolved != null && Directory(resolved.toFilePath()).existsSync()) {
