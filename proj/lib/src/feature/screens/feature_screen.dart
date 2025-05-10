@@ -3,15 +3,14 @@
 //                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-import "package:easy_localization/easy_localization.dart";
 import 'package:flutter/material.dart';
 import 'package:layer_kit/layer_kit.dart';
 import 'package:layer_kit_example/config/theme/app_colors.dart';
 import 'package:layer_kit_example/core/callbacks/callbacks.dart';
 import 'package:layer_kit_example/core/common/widgets/custom_elevated_button.dart';
 import 'package:layer_kit_example/core/network/network_checker_widget.dart';
+import 'package:layer_kit_example/core/utils/common_toast.dart';
 import 'package:layer_kit_example/src/feature/providers/feature_provider.dart';
-import 'package:layer_kit_example/src/main_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../../../config/routes/routes.dart';
@@ -26,7 +25,7 @@ class FeatureScreen extends StatelessWidget with BaseRoute {
   AppRoutes get routeName => Routes.feature;
 
   @override
-  TransitionType get transitionType => TransitionType.fade;
+  TransitionType get transitionType => KitConfig.transitionType;
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +58,7 @@ class FeatureScreen extends StatelessWidget with BaseRoute {
                     logEnabled: true,
                     tryBlock: () {
                       /// todo : implement on click logic
+                      showSnackbar("Feature Button Clicked");
                       devlog("Feature Button Clicked");
                     },
                     errorHandler: (e) {
