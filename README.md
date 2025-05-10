@@ -15,7 +15,6 @@ LayerKit is a powerful Flutter framework that combines the best aspects of MVVM 
 - **Clean Project Structure** - Organized folder structure that follows both MVVM and Clean Architecture principles
 - **Feature Generation** - CLI tools to quickly scaffold new features with all necessary components
 - **Project Generation** - Quickly bootstrap an entire project with best practices built-in
-- **View State Management** - Built-in ViewModel base classes with state handling
 - **Error Handling** - Standardized exceptions and failures for consistent error handling
 - **Configuration System** - Flexible configuration for different environments
 - **Extension Methods** - Utility extensions for common types to reduce boilerplate
@@ -54,6 +53,31 @@ Run:
 flutter pub get
 ```
 
+## 🏁 Getting Started
+
+### Generating a New Project
+
+Create a new Flutter project, then run:
+
+```bash
+dart run layer_kit --project
+```
+
+This will generate a properly structured project with all the necessary files and configurations.
+
+### Generating a New Feature
+
+To add a new feature to your project:
+
+```bash
+dart run layer_kit --feature feature_name
+```
+
+This command will:
+1. Create a feature directory in the `src` folder
+2. Generate all necessary files following MVVM and Clean Architecture principles
+3. Update routes to include the new feature
+
 ## 📁 Project Structure
 
 LayerKit organizes your project into a well-defined structure:
@@ -89,32 +113,6 @@ lib/
 ├── di_container.main.dart          # di main file - injection of all dependencies
 └── main.dart                       # Entry point
 ```
-
-## 🏁 Getting Started
-
-### Generating a New Project
-
-Create a new Flutter project, then run:
-
-```bash
-dart run layer_kit --project
-```
-
-This will generate a properly structured project with all the necessary files and configurations.
-
-### Generating a New Feature
-
-To add a new feature to your project:
-
-```bash
-dart run layer_kit --feature feature_name
-```
-
-This command will:
-1. Create a feature directory in the `src` folder
-2. Generate all necessary files following MVVM and Clean Architecture principles
-3. Update routes to include the new feature
-
 
 ## ⚙️ Configuration
 

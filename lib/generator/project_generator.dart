@@ -77,21 +77,6 @@ class ProjectGenerator {
   }
 
   Future<bool> generateFullProject() async {
-    // // Start from the script file path
-    // final currentPath = Directory.current.path;
-    //
-    // // Try walking up until we find the correct template path
-    // String? foundPath =;
-    // Directory dir = Directory(currentPath);
-    // while (dir.parent.path != dir.path) {
-    //   final maybeTemplate = Directory(path.join(dir.path, 'proj', 'lib'));
-    //   if (maybeTemplate.existsSync()) {
-    //     foundPath = path.join(dir.path, 'proj');
-    //     break;
-    //   }
-    //   dir = dir.parent;
-    // }
-
 
     final foundPath = await findProjPath();
 
