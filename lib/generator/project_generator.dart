@@ -12,26 +12,64 @@ class ProjectGenerator {
   Future<String?> findProjPath() async {
     // 1. Try resolving using package URI
     try {
-      final uri = Uri.parse('package:layer_kit/proj/lib/');
+      final uri = Uri.parse('package:layer_kit/proj/');
       final resolved = await Isolate.resolvePackageUri(uri);
 
-      if (resolved != null && Directory(resolved.toFilePath()).existsSync()) {
-        // Trim off the /lib to get the base "proj" folder
-        return path.dirname(resolved.toFilePath());
+      if (resolved != null) {
+        final projDir = path.normalize(resolved.toFilePath());
+        if (Directory(projDir).existsSync()) {
+          return projDir;
+        }
       }
-    } catch (_) {
+    } catch (e) {
+      print('Package resolution failed: $e');
       // Fall back if resolve fails
     }
 
-    // 2. Fall back to searching from current directory
+    // 2. Check in the layer_kit package location
+    try {
+      final uri = Uri.parse('package:layer_kit/layer_kit.dart');
+      final resolved = await Isolate.resolvePackageUri(uri);
+
+      if (resolved != null) {
+        // Navigate up from the resolved package file to find the proj directory
+        final packageDir = path.dirname(path.dirname(resolved.toFilePath()));
+        final projPath = path.join(packageDir, 'proj');
+
+        if (Directory(projPath).existsSync()) {
+          return projPath;
+        }
+      }
+    } catch (e) {
+      print('Package base resolution failed: $e');
+    }
+
+    // 3. Search in parent directories starting from current working directory
     String? foundPath;
     Directory dir = Directory.current;
+
+    // Look for 'proj' in the current directory first
+    final directProj = path.join(dir.path, 'proj');
+    if (Directory(directProj).existsSync()) {
+      return directProj;
+    }
+
+    // Then check each parent until root
     while (dir.parent.path != dir.path) {
-      final maybeTemplate = Directory(path.join(dir.path, 'proj', 'lib'));
-      if (maybeTemplate.existsSync()) {
-        foundPath = path.join(dir.path, 'proj');
+      // Try to find proj directory
+      final projCandidate = path.join(dir.path, 'proj');
+      if (Directory(projCandidate).existsSync()) {
+        foundPath = projCandidate;
         break;
       }
+
+      // Also check in a potential 'packages/layer_kit' subdirectory
+      final packageProj = path.join(dir.path, 'packages', 'layer_kit', 'proj');
+      if (Directory(packageProj).existsSync()) {
+        foundPath = packageProj;
+        break;
+      }
+
       dir = dir.parent;
     }
 
