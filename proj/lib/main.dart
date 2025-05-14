@@ -97,35 +97,35 @@ class _MyAppState extends State<MyApp> {
       // DeviceOrientation.landscapeLeft,
     ]);
 
+    KitConfig.init(context: context);
+
     return Consumer<ThemeProvider>(builder: (context, state, _) {
-      return LayerKitConfigProvider(
-        child: AppResponsiveTheme(
-          themeMode: state.theme,
-          config: ColorConfig(
-            lightColors: AppColors.light().toThemeColor(),
-            darkColors: AppColors.dark().toThemeColor(),
-          ),
-          child: ToastificationWrapper(
-            child: MaterialApp(
-              title: AppConsts.appName,
-              navigatorKey: AppRouter.navigatorKey,
-              debugShowCheckedModeBanner: false,
-              onGenerateRoute: (s) =>
-                  AppRouter.generateRoute(s, SplashScreen()),
-              scrollBehavior: const StretchScrollBehavior(),
-              initialRoute: Routes.splash.path,
-              localizationsDelegates: context.localizationDelegates,
-              supportedLocales: context.supportedLocales,
-              locale: context.locale,
-              theme: state.darkTheme ? ThemeData.dark() : ThemeData.light(),
-              builder: (context, child) {
-                return MediaQuery(
-                  data: MediaQuery.of(context)
-                      .copyWith(textScaler: const TextScaler.linear(1.0)),
-                  child: child ?? SizedBox(),
-                );
-              },
-            ),
+      return AppResponsiveTheme(
+        themeMode: state.theme,
+        config: ColorConfig(
+          lightColors: AppColors.light().toThemeColor(),
+          darkColors: AppColors.dark().toThemeColor(),
+        ),
+        child: ToastificationWrapper(
+          child: MaterialApp(
+            title: AppConsts.appName,
+            navigatorKey: AppRouter.navigatorKey,
+            debugShowCheckedModeBanner: false,
+            onGenerateRoute: (s) =>
+                AppRouter.generateRoute(s, SplashScreen()),
+            scrollBehavior: const StretchScrollBehavior(),
+            initialRoute: Routes.splash.path,
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
+            theme: state.darkTheme ? ThemeData.dark() : ThemeData.light(),
+            builder: (context, child) {
+              return MediaQuery(
+                data: MediaQuery.of(context)
+                    .copyWith(textScaler: const TextScaler.linear(1.0)),
+                child: child ?? SizedBox(),
+              );
+            },
           ),
         ),
       );

@@ -129,39 +129,40 @@ Widget build(BuildContext context) {
     // DeviceOrientation.landscapeLeft,
   ]);
 
+  KitConfig.init(
+    context: context,
+    envType: EnvType.development,
+    defaultRadius: 10,
+    showApiReqLog: false,
+    showApiResLog: true,
+  );
+  
   return Consumer<ThemeProvider>(builder: (context, state, _) {
-    return LayerKitConfigProvider(
-      envType: EnvType.development,
-      defaultRadius: 10,
-      showApiReqLog: false,
-      showApiResLog: true,
-      /// other config options
-      child: AppResponsiveTheme( /// for Theme Configuaration [see responsive_theme package on pub.dev]
-        themeMode: state.theme,
-        config: ColorConfig(
-          lightColors: AppColors.light().toThemeColor(),
-          darkColors: AppColors.dark().toThemeColor(),
-        ),
-        child: ToastificationWrapper(
-          child: MaterialApp(
-            title: AppConsts.appName,
-            debugShowCheckedModeBanner: false,
-            /// route config [see flutter_easy_routing package on pub.dev]
-            navigatorKey: AppRouter.navigatorKey,
-            onGenerateRoute: (s) => AppRouter.generateRoute(s, SplashScreen()),
-            scrollBehavior: const StretchScrollBehavior(),
-            initialRoute: Routes.splash.path,
-            localizationsDelegates: context.localizationDelegates,
-            supportedLocales: context.supportedLocales,
-            locale: context.locale,
-            theme: state.darkTheme ? ThemeData.dark() : ThemeData.light(),
-            builder: (context, child) {
-              return MediaQuery(
-                data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
-                child: child ?? SizedBox(),
-              );
-            },
-          ),
+    return AppResponsiveTheme( /// for Theme Configuaration [see responsive_theme package on pub.dev]
+      themeMode: state.theme,
+      config: ColorConfig(
+        lightColors: AppColors.light().toThemeColor(),
+        darkColors: AppColors.dark().toThemeColor(),
+      ),
+      child: ToastificationWrapper(
+        child: MaterialApp(
+          title: AppConsts.appName,
+          debugShowCheckedModeBanner: false,
+          /// route config [see flutter_easy_routing package on pub.dev]
+          navigatorKey: AppRouter.navigatorKey,
+          onGenerateRoute: (s) => AppRouter.generateRoute(s, SplashScreen()),
+          scrollBehavior: const StretchScrollBehavior(),
+          initialRoute: Routes.splash.path,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          theme: state.darkTheme ? ThemeData.dark() : ThemeData.light(),
+          builder: (context, child) {
+            return MediaQuery(
+              data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+              child: child ?? SizedBox(),
+            );
+          },
         ),
       ),
     );
