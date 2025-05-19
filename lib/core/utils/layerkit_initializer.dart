@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:layer_kit/layer_kit.dart';
 
@@ -416,7 +417,7 @@ class _LayerKitInitializerState extends State<LayerKitInitializer> with WidgetsB
             debugShowCheckedModeBanner: false,
             home: Scaffold(
               body: Center(
-                child: CircularProgressIndicator(),
+                child: CupertinoActivityIndicator(),
               ),
             ),
           );
