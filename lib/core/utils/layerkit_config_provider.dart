@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:layer_kit/layer_kit.dart';
 
 /// A widget that initializes and provides LayerKitConfig to its child widget tree
+@Deprecated("use LayerKitInitializer")
 class LayerKitConfigProvider extends StatefulWidget {
   final Widget child;
 

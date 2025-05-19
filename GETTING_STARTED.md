@@ -12,8 +12,6 @@ dependencies:
     sdk: flutter
   layer_kit: ^1.0.0
 
-dev_dependencies:
-  layer_kit_cli: ^1.0.0  # For project and feature generation
 ```
 
 Run:
@@ -96,7 +94,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayerKitConfigProvider(
+    return LayerKitInitializer(
       envType: EnvType.development,
       showDevLog: true,
       // Other configuration options

@@ -119,6 +119,15 @@ lib/
 LayerKit provides a flexible configuration system through `KitConfig`:
 
 ```dart
+// main.dart
+  await LayerKitInitializer.ensureInitialized();
+  runApp(LayerKitInitializer(
+    envType: EnvType.development,
+    showApiReqLog: false,
+    showApiResLog: false,
+    child: MyApp(),
+  ));
+  
 /// ...code....  
 @override
 Widget build(BuildContext context) {
@@ -128,14 +137,6 @@ Widget build(BuildContext context) {
     // DeviceOrientation.landscapeRight,
     // DeviceOrientation.landscapeLeft,
   ]);
-
-  KitConfig.init(
-    context: context,
-    envType: EnvType.development,
-    defaultRadius: 10,
-    showApiReqLog: false,
-    showApiResLog: true,
-  );
   
   return Consumer<ThemeProvider>(builder: (context, state, _) {
     return AppResponsiveTheme( /// for Theme Configuaration [see responsive_theme package on pub.dev]

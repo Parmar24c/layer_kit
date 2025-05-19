@@ -13,3 +13,7 @@
 ## 0.0.8
 
 - Transition Types Changes 
+ 
+## 0.0.9
+
+- made LayerKitInitializer instead of LayerKitConfigProvider 
