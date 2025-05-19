@@ -1,3 +1,7 @@
+## 1.0.1
+
+- Bug Fixes in Example codes
+
 ## 1.0.0
 
 - made LayerKitInitializer instead of LayerKitConfigProvider

@@ -416,11 +416,10 @@ packages:
   layer_kit:
     dependency: "direct main"
     description:
-      name: layer_kit
-      sha256: c3eeb75a3013d0ece56a37d934fbf5118e15bbd268a2cf86b6b3c5052f630be8
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.3"
+      path: ".."
+      relative: true
+    source: path
+    version: "1.0.0"
   leak_tracker:
     dependency: transitive
     description:
