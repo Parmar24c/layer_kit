@@ -5,7 +5,7 @@
 
 name: layer_kit
 description: A Flutter architecture package that combines Clean Architecture and MVVM patterns using Provider for state management.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/Parmar24c/layer_kit
 
 environment:
@@ -19,7 +19,7 @@ dependencies:
   path: ^1.8.3
   recase: ^4.1.0
   flutter_easy_routing: ^0.0.4
-  responsive_theme: ^0.0.1
+  responsive_theme: ^0.0.3
 
 dev_dependencies:
   flutter_test:

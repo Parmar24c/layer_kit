@@ -419,7 +419,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.0.0"
+    version: "1.0.1"
   leak_tracker:
     dependency: transitive
     description:
@@ -664,10 +664,10 @@ packages:
     dependency: transitive
     description:
       name: responsive_theme
-      sha256: "8e1bc6f9a3d2161a1887a66597096db67abfecb8572103db65a92fa7137e7db3"
+      sha256: "101f3361f7d7803098b2428c20299a5def00ccc7bd3d3817ce5ccb2c6536c81b"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.1"
+    version: "0.0.3"
   rxdart:
     dependency: transitive
     description:

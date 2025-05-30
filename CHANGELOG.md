@@ -1,3 +1,7 @@
+## 1.0.2
+
+- Upgrade Dependencies
+
 ## 1.0.1
 
 - Bug Fixes in Example codes
