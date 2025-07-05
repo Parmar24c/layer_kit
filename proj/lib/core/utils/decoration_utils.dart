@@ -5,7 +5,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'layerkit_config.dart';
+import '../../config/layerkit_config.dart';
 
 /// returns default InputDecoration for AppTextField widget
 InputDecoration defaultInputDecoration(

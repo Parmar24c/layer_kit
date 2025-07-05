@@ -5,7 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:layer_kit/layer_kit.dart';
-import 'package:layer_kit_example/config/theme/app_colors.dart';
+import 'package:layer_kit_example/config/theme/theme.dart';
 import 'package:layer_kit_example/core/callbacks/callbacks.dart';
 import 'package:layer_kit_example/core/common/widgets/custom_elevated_button.dart';
 import 'package:layer_kit_example/core/network/network_checker_widget.dart';
@@ -14,6 +14,9 @@ import 'package:layer_kit_example/src/feature/providers/feature_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../../config/routes/routes.dart';
+import '../../../config/theme/atoms/text.dart';
+import '../../../config/layerkit_config.dart';
+import '../../../core/utils/devlog.dart';
 
 class FeatureScreen extends StatelessWidget with BaseRoute {
   const FeatureScreen({super.key});

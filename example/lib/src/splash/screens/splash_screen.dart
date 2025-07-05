@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.account_circle_rounded, size: 30.w),
+            Icon(Icons.flutter_dash, size: 30.w),
           ],
         ),
       ),

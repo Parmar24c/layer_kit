@@ -19,7 +19,6 @@ dependencies:
   path: ^1.8.3
   recase: ^4.1.0
   flutter_easy_routing: ^0.0.4
-  responsive_theme: ^0.0.3
 
 dev_dependencies:
   flutter_test:

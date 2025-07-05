@@ -3,10 +3,11 @@
 //                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-import 'package:layer_kit_example/config/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:layer_kit/layer_kit.dart';
+import 'package:layer_kit_example/config/theme/atoms/typography.dart';
+import 'package:layer_kit_example/config/theme/theme.dart';
+import 'package:layer_kit_example/config/theme/configs/theme_config.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController? ctr;
@@ -85,7 +86,7 @@ class CustomTextField extends StatelessWidget {
           : (_) {
               return null;
             },
-      style: context.textTheme?.regular14,
+      style: context.textTheme.regular14,
       decoration: customInputDecoration(
           context: context,
           radius: radius,
@@ -125,12 +126,12 @@ InputDecoration customInputDecoration({
     prefixIcon: prefixIcon,
     hintText: hintText,
     hintStyle:
-        context.textTheme?.regular14.copyWith(fontWeight: FontWeight.w300),
+        context.textTheme.regular14.copyWith(fontWeight: FontWeight.w300),
     labelText: labelText,
     labelStyle:
-        context.textTheme?.regular14.copyWith(fontWeight: FontWeight.w300),
+        context.textTheme.regular14.copyWith(fontWeight: FontWeight.w300),
     errorStyle:
-        context.textTheme?.regular14.copyWith(color: context.colors.red80),
+        context.textTheme.regular14.copyWith(color: context.colors.WHITE),
     contentPadding:
         contentPadding ?? EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
     focusedBorder: OutlineInputBorder(

@@ -3,7 +3,8 @@
 //                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-import 'package:layer_kit/core/utils/layerkit_config.dart';
+
+import '../../config/layerkit_config.dart';
 
 class AppConsts {
   AppConsts._();

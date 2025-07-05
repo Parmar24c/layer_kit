@@ -7,10 +7,12 @@ import "package:easy_localization/easy_localization.dart";
 import 'package:flutter/material.dart';
 import 'package:layer_kit/layer_kit.dart';
 import 'package:layer_kit_example/config/routes/routes.dart';
-import 'package:layer_kit_example/config/theme/app_colors.dart';
+import 'package:layer_kit_example/config/theme/theme.dart';
 import 'package:layer_kit_example/core/callbacks/callbacks.dart';
 import 'package:layer_kit_example/core/common/widgets/custom_elevated_button.dart';
 import 'package:layer_kit_example/core/helper/loader.dart';
+
+import '../../../config/theme/atoms/text.dart';
 
 class Demo2Screen extends StatefulWidget with BaseRoute {
   const Demo2Screen({super.key});
@@ -29,7 +31,7 @@ class _Demo2ScreenState extends State<Demo2Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.colors.white40,
+      backgroundColor: context.colors.WHITE,
       appBar: AppBar(
         title: Txt.appbar("demoScreen".tr()),
       ),
@@ -47,7 +49,7 @@ class _Demo2ScreenState extends State<Demo2Screen> {
                 },
               );
             },
-            child: Txt.regular14("Process", color: context.colors.white)),
+            child: Txt.regular14("Process", color: context.colors.WHITE)),
       ),
     );
   }

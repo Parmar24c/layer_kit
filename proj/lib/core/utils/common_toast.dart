@@ -6,9 +6,10 @@
 import "package:layer_kit_example/config/theme/app_colors.dart";
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import "package:layer_kit/layer_kit.dart";
+import "package:layer_kit_example/config/theme/configs/theme_config.dart";
 import "package:toastification/toastification.dart";
 
+import "../../config/theme/atoms/text.dart";
 import "../constants/color_constants.dart";
 
 Future<bool?> showFlutterToast(String msg, {Color? textColor, Color? color}) {
@@ -16,7 +17,7 @@ Future<bool?> showFlutterToast(String msg, {Color? textColor, Color? color}) {
     msg: msg,
     toastLength: Toast.LENGTH_SHORT,
     fontSize: 1.55.t,
-    backgroundColor: color ?? AppColors.light().primary.mapped.shade200,
+    backgroundColor: color ?? AppColors.light.primary.mapped.shade200,
     textColor: textColor ?? Colors.black,
     gravity: ToastGravity.BOTTOM,
   );
@@ -41,7 +42,7 @@ showSnackbar(String msg,
     backgroundColor: color ?? Colors.grey.shade800,
     foregroundColor: Colors.white,
     borderSide: BorderSide(color: color ?? Colors.grey.shade800),
-    primaryColor: handleColor ?? AppColors.light().primary,
+    primaryColor: handleColor ?? AppColors.light.primary,
     alignment: Alignment.bottomCenter,
     autoCloseDuration: Duration(milliseconds: 1500),
     type: type,

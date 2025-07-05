@@ -6,10 +6,13 @@
 import "package:easy_localization/easy_localization.dart";
 import 'package:flutter/material.dart';
 import 'package:layer_kit/layer_kit.dart';
-import 'package:layer_kit_example/config/theme/app_colors.dart';
+import 'package:layer_kit_example/config/theme/theme.dart';
 import 'package:layer_kit_example/core/network/network_checker_widget.dart';
 
 import '../../../config/routes/routes.dart';
+import '../../../config/theme/atoms/padding.dart';
+import '../../../config/theme/atoms/spacing.dart';
+import '../../../config/theme/atoms/text.dart';
 import '../../../core/common/widgets/custom_elevated_button.dart';
 import 'demo2_screen.dart';
 

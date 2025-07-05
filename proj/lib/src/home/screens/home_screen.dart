@@ -9,6 +9,8 @@ import 'package:layer_kit/layer_kit.dart';
 import 'package:layer_kit_example/core/network/network_checker_widget.dart';
 
 import '../../../config/routes/routes.dart';
+import '../../../config/theme/atoms/padding.dart';
+import '../../../config/theme/atoms/text.dart';
 
 class HomeScreen extends StatefulWidget with BaseRoute {
   const HomeScreen({super.key});

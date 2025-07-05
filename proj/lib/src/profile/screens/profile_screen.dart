@@ -4,12 +4,13 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:layer_kit_example/core/network/network_checker_widget.dart';
-import 'package:layer_kit_example/src/main_screen.dart';
 import "package:easy_localization/easy_localization.dart";
 import 'package:flutter/material.dart';
 import 'package:layer_kit/layer_kit.dart';
 
 import '../../../config/routes/routes.dart';
+import '../../../config/theme/atoms/padding.dart';
+import '../../../config/theme/atoms/text.dart';
 
 class ProfileScreen extends StatefulWidget with BaseRoute {
   const ProfileScreen({super.key});

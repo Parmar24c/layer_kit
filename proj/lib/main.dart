@@ -38,7 +38,6 @@ Future<void> main() async {
   await Di.init();
   await GlobalPrefs.init();
   await EasyLocalization.ensureInitialized();
-  await LayerKitController.ensureInitialized();
 
   HttpOverrides.global = MyHttpOverrides();
 
@@ -50,12 +49,7 @@ Future<void> main() async {
       path: 'lib/config/lang',
       fallbackLocale: Locl.en.locale,
       assetLoader: RootBundleAssetLoader(),
-      child: LayerKitInitializer(
-        envType: EnvType.development,
-        showApiReqLog: false,
-        showApiResLog: false,
-        child: MyApp(),
-      ),
+      child: MyApp(),
     ),
   ));
 }
@@ -105,31 +99,24 @@ class _MyAppState extends State<MyApp> {
     ]);
 
     return Consumer<ThemeProvider>(builder: (context, state, _) {
-      return AppResponsiveTheme(
-        themeMode: state.theme,
-        config: ColorConfig(
-          lightColors: AppColors.light().toThemeColor(),
-          darkColors: AppColors.dark().toThemeColor(),
-        ),
-        child: ToastificationWrapper(
-          child: MaterialApp(
-            title: AppConsts.appName,
-            navigatorKey: AppRouter.navigatorKey,
-            debugShowCheckedModeBanner: false,
-            onGenerateRoute: (s) => AppRouter.generateRoute(s, SplashScreen()),
-            scrollBehavior: const StretchScrollBehavior(),
-            initialRoute: Routes.splash.path,
-            localizationsDelegates: context.localizationDelegates,
-            supportedLocales: context.supportedLocales,
-            locale: context.locale,
-            theme: state.darkTheme ? ThemeData.dark() : ThemeData.light(),
-            builder: (context, child) {
-              return MediaQuery(
-                data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
-                child: child ?? SizedBox(),
-              );
-            },
-          ),
+      return ToastificationWrapper(
+        child: MaterialApp(
+          title: AppConsts.appName,
+          navigatorKey: AppRouter.navigatorKey,
+          debugShowCheckedModeBanner: false,
+          onGenerateRoute: (s) => AppRouter.generateRoute(s, SplashScreen()),
+          scrollBehavior: const StretchScrollBehavior(),
+          initialRoute: Routes.splash.path,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          theme: state.darkTheme ? ThemeData.dark() : ThemeData.light(),
+          builder: (context, child) {
+            return MediaQuery(
+              data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+              child: child ?? SizedBox(),
+            );
+          },
         ),
       );
     });

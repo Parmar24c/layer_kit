@@ -8,7 +8,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:layer_kit/layer_kit.dart';
 
-import 'layerkit_constants.dart';
 
 enum EnvType {
   development,
@@ -118,7 +117,6 @@ class KitConfig {
     required BuildContext context,
   }) {
     // Environment configuration
-    ThemeConfig.init(context);
     RouteConfig.setDefaultTransition(
         transitionType ?? KitConfig.transitionType);
 

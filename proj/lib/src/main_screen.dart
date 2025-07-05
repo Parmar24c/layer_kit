@@ -8,12 +8,15 @@ import 'package:flutter/material.dart';
 import 'package:layer_kit/layer_kit.dart';
 import "package:layer_kit_example/config/lang/lang.dart";
 import 'package:layer_kit_example/config/theme/app_colors.dart';
+import 'package:layer_kit_example/config/theme/configs/theme_config.dart';
+import 'package:layer_kit_example/config/theme/configs/theme_extensions.dart';
 import "package:layer_kit_example/di_container.dart";
 import 'package:layer_kit_example/src/demo/screens/demo_screen.dart';
 import 'package:layer_kit_example/src/home/screens/home_screen.dart';
 import 'package:layer_kit_example/src/profile/screens/profile_screen.dart';
 
 import '../config/routes/routes.dart';
+import '../config/theme/atoms/text.dart';
 
 class MainScreen extends StatefulWidget with BaseRoute {
   final int? initialIndex;
@@ -68,8 +71,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Txt.appbar(
-            "${BottomNavItem.values[currentIndex].title} ${"screen".tr()}"),
+        title: Txt.appbar("${BottomNavItem.values[currentIndex].title} ${"screen".tr()}"),
         actions: [
           IconButton(
               onPressed: () {
@@ -92,14 +94,12 @@ class _MainScreenState extends State<MainScreen> {
             .map((e) => BottomNavigationBarItem(
                   icon: Icon(
                     e.icon,
-                    color: currentIndex == e.index
-                        ? context.colors.primary
-                        : context.colors.black,
+                    color: currentIndex == e.index ? context.colors.primary : context.colors.BLACK,
                   ),
                   label: e.title,
                 ))
             .toList(),
-        unselectedItemColor: context.colors.black.withOpacity(0.5),
+        unselectedItemColor: context.colors.BLACK.withOpacity(0.5),
         selectedItemColor: context.colors.primary,
         currentIndex: currentIndex,
         selectedFontSize: 1.8.h,

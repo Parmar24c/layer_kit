@@ -5,7 +5,8 @@
 
 import 'dart:async';
 
-import 'package:layer_kit/core/utils/devlog.dart';
+
+import '../utils/devlog.dart';
 
 class CountdownTimerService {
   final int initialSeconds;

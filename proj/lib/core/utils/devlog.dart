@@ -5,7 +5,7 @@
 
 import 'dart:developer' as dev;
 
-import 'package:layer_kit/core/utils/layerkit_config.dart';
+import '../../config/layerkit_config.dart';
 
 String _truncateData(String data, int? limit) {
   String dataString = data.toString();

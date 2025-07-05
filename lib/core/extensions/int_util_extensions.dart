@@ -22,7 +22,7 @@ extension IntExtensions on int? {
   /// HTTP status code
   bool isSuccessful() => this! >= 200 && this! <= 206;
 
-  BorderRadius borderRadius([double? val]) => radius(val);
+  BorderRadius get borderRadius => BorderRadius.circular(this?.toDouble() ?? 6);
 
   Duration get microseconds => Duration(microseconds: validate());
 

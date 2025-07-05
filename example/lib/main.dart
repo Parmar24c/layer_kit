@@ -5,7 +5,6 @@
 
 import 'dart:io';
 
-import 'package:layer_kit/core/utils/layerkit_initializer.dart';
 import "package:layer_kit_example/config/lang/lang.dart";
 import 'package:layer_kit_example/config/routes/routes.dart';
 import 'package:layer_kit_example/config/theme/app_colors.dart';
@@ -39,7 +38,7 @@ Future<void> main() async {
   await Di.init();
   await GlobalPrefs.init();
   await EasyLocalization.ensureInitialized();
-  await LayerKitInitializer.ensureInitialized();
+  await LayerKitController.ensureInitialized();
 
   HttpOverrides.global = MyHttpOverrides();
 
@@ -53,8 +52,8 @@ Future<void> main() async {
       assetLoader: RootBundleAssetLoader(),
       child: LayerKitInitializer(
         envType: EnvType.development,
-        showApiReqLog: true,
-        showApiResLog: true,
+        showApiReqLog: false,
+        showApiResLog: false,
         child: MyApp(),
       ),
     ),

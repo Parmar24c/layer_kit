@@ -5,7 +5,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:layer_kit/layer_kit.dart';
-import 'package:layer_kit_example/config/theme/app_colors.dart';
+import 'package:layer_kit_example/config/theme/theme.dart';
+import 'package:layer_kit_example/config/theme/configs/theme_config.dart';
 import "package:layer_kit_example/core/helper/global_prefs.dart";
 
 import '../../../config/routes/routes.dart';
@@ -44,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.colors.white,
+      backgroundColor: context.colors.background,
       body: SizedBox(
         width: 100.w,
         child: Column(

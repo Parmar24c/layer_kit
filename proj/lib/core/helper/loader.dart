@@ -3,11 +3,13 @@
 //                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-import 'package:layer_kit/core/utils/devlog.dart';
 import 'package:layer_kit/layer_kit.dart';
-import 'package:layer_kit_example/config/theme/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:layer_kit_example/config/theme/theme.dart';
+import 'package:layer_kit_example/config/theme/configs/theme_config.dart';
+
+import '../utils/devlog.dart';
 
 BuildContext? c;
 

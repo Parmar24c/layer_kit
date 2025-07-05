@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:layer_kit_example/core/helper/global_prefs.dart';
 import 'package:flutter/cupertino.dart';
 
-import "package:responsive_theme/responsive_theme.dart";
 
 class ThemeProvider with ChangeNotifier {
   ThemeProvider();
@@ -15,7 +14,7 @@ class ThemeProvider with ChangeNotifier {
   bool get darkTheme => _darkTheme;
   bool _darkTheme = false;
 
-  AppThemeMode get theme => _darkTheme ? AppThemeMode.dark : AppThemeMode.light;
+  ThemeMode get theme => _darkTheme ? ThemeMode.dark : ThemeMode.light;
 
   void toggleTheme({bool? isDark}) {
     _darkTheme = isDark ?? !_darkTheme;
@@ -23,13 +22,17 @@ class ThemeProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  bool getSystemTheme(BuildContext context) {
+    final platformBrightness = MediaQuery.platformBrightnessOf(context);
+    final useDarkTheme = platformBrightness == Brightness.dark;
+    return useDarkTheme;
+  }
   void loadCurrentTheme(BuildContext context,
       {ThemeMode themeMode = ThemeMode.system}) async {
     final isDarkMode = GlobalPrefs.getTheme;
     if (isDarkMode == null) {
       final useDarkTheme = switch (themeMode) {
-        ThemeMode.system =>
-          AppResponsiveTheme.colorModeOf(context) == AppThemeMode.dark,
+        ThemeMode.system => getSystemTheme(context),
         ThemeMode.light => false,
         ThemeMode.dark => true,
       };

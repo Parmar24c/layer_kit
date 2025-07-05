@@ -9,11 +9,13 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:layer_kit/layer_kit.dart';
 
+import '../../layerkit_config.dart';
+
 class LoggingInterceptor extends InterceptorsWrapper {
   String truncateData(dynamic data) {
     String dataString = data?.toString() ?? '';
     return dataString.length > KitConfig.apiLogDataLengthInChars
-        ? '${dataString.substring(0, 4000)}...'
+        ? '${dataString.substring(0, KitConfig.apiLogDataLengthInChars)}...'
         : dataString;
   }
 

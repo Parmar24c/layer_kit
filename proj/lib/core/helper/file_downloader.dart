@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:layer_kit_example/config/data/dio/dio_client.dart';
-import 'package:layer_kit/core/utils/devlog.dart';
 import 'package:layer_kit/layer_kit.dart';
 
 import '../../di_container.dart';
+import '../utils/devlog.dart';
 
 enum FileDownloadFolder {
   miodealSeller("Miodeal Seller"),

@@ -3,14 +3,14 @@
 //                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-import 'package:layer_kit_example/config/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:layer_kit/layer_kit.dart';
+import 'package:layer_kit_example/config/theme/theme.dart';
+import 'package:layer_kit_example/config/theme/configs/theme_config.dart';
 import 'package:provider/provider.dart';
 
+import '../../config/theme/atoms/text.dart';
 import '../../di_container.dart';
-import '../constants/image_constants.dart';
 import 'network_service.dart';
 
 class NetworkCheckerWidget extends StatelessWidget {
@@ -66,7 +66,7 @@ class NoInternetWdget extends StatelessWidget {
               Icon(Icons.wifi_off_sharp, size: 30.w),
               Txt("No Internet", fontSize: 4.t, color: context.colors.primary),
               Txt("Check your Internet Connection..!",
-                  fontSize: 1.5.t, color: context.colors.black),
+                  fontSize: 1.5.t, color: context.colors.BLACK),
               SizedBox(height: 2.h),
               SizedBox(
                 width: 55.w,
